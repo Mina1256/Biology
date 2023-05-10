@@ -1,0 +1,166 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(222, 222, 222);
+}
+h1 {
+    margin-top: 150px;
+    margin-bottom: 10px;
+    color: black;
+    font-size: 60px;
+    font-family: monaco, monospace;
+    text-align: center;
+}
+
+.dropdown button {
+    font-family: monaco, monospace;
+    font-size: 30px;
+    background-color: rgb(250, 205, 2);
+    border: none;
+    color: black;
+}
+
+.projects {
+    position: relative;
+}
+
+.projects_list {
+/*.projects ul {*/
+    position: absolute;
+    background:white;
+    margin-top: 10px;
+    width: 180px;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 16px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
+}
+.projects_list ul {
+/*.projects ul {*/
+    list-style: none;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+.projects_list li {
+/*.projects li {*/
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.projects_list li a {
+/*.projects li a {*/
+    color: black;
+    text-decoration: none;
+    font-family: monaco, monospace;
+    font-size: 25px;
+}
+
+/*.projects button:focus + ul{*/
+.projects_dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+}
+
+.nav_links a:hover, .nav_links button:hover {
+    color:rgb(237, 168, 31);
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* align items vertically*/
+    min-height: 14vh;
+    font-family: monaco, monospace;
+    background-color: rgb(250, 205, 2);
+    z-index: 100;
+}
+.logo {
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 30px;
+    border-style: solid;
+    border-color: black;
+    padding: 2px;
+    padding-left: 8px;
+}
+.nav_links {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    list-style: none;
+}
+.nav_links a {
+    color: black;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: monaco, monospace;
+}
+/* nav bar for smaller screens */
+.burger {
+    display: none;
+}
+
+.burger div{
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: black;
+}
+
+@media screen and (max-width:1000px) {
+    body {
+        overflow-x: hidden;
+    }
+    .nav_links {
+        position: absolute;
+        right: 0px;
+        height: 86vh; /*the nav bar already has a height of 14, so this makes it take up the whole screen*/
+        top: 14vh; 
+        background-color: rgb(250, 205, 2);
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+
+        justify-content: flex-start;
+        
+        width: 100%; /* nav bar takes up entire screen on mobile device */
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav_links li{
+        opacity: 1;
+        margin: 4%;
+    }
+    .nav_links unique_nav {
+        background-color: yellow;
+        border-style: solid;
+    }
+    .burger {
+        display: block;
+    }
+    .projects_list li {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+.nav_active {
+    transform: translateX(0%);
+} 
